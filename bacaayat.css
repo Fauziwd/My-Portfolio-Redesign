@@ -1,0 +1,209 @@
+body {
+    /* background-image: url('image/bgclock.png');
+    background-size: contain; */
+    background-color: #818fc4;
+    font-family: 'Tilt Prism', cursive;
+    color: #931d50;
+  }
+  .container {
+    font-family: 'Montserrat Alternates', sans-serif;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 2px 52px 50px;
+    color: #6c6a69;
+    box-shadow: 2px 2px 40px rgba(13, 35, 82, 0.813);
+  }
+  h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+  th {
+    position: sticky;
+    top: 0px;
+    padding: 10px 50px 10px 50px;
+    border-radius: 4px;
+    background-color: #abce97b1;
+    backdrop-filter: blur(5px); /* nilai blur dapat disesuaikan */
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  table{
+  text-align: center;
+  margin: auto;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(5 24 33);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #818fc4;
+    border-radius: 10px;
+  }
+  
+td {
+  color: white ;
+}
+
+th {
+  color: #32342a;
+}
+
+h4 {
+  color: rgb(5 24 33)
+}
+
+  p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #e2e2e2;
+    font-family: 'Amiri Quran', serif;
+  }
+
+  .table-container {
+    background-color: rgb(5 24 33);
+    border-radius: 10px;
+    overflow-y: scroll;
+    height: 100px;
+    padding: 0px 100px 100px;
+    width: auto;
+    box-shadow: 2px 2px 20px rgb(0 0 0 / 30%);
+}
+  
+  .surat-list {
+    max-height: 300px;
+  }
+  
+  .deskripsi-surat {
+    max-height: 600px;
+  }
+  
+a.surat-link {
+  color: rgb(5 24 33);
+}
+
+  b.nomor_ayat {
+    background-color:#818fc4;;
+    color: rgb(5 24 33);
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+  } 
+
+td {
+  background-color: #818fc4;
+  border-radius: 5px;
+}
+
+th {
+  background-color: #818fc4;
+  color: #040d27;
+}
+
+th.nama-surat {
+  background-color: #818fc4;
+  box-shadow:  0px 10px 70px rgb(0 0 0 / 50%);
+  color: #040d27;
+  width: 500px;
+  padding: 20px;
+}
+
+th.no-surat {
+  background-color: #818fc4;
+  box-shadow:  0px 10px 70px rgb(0 0 0 / 50%);
+  color: #040d27;
+  width: 20px;
+  padding: 15px;
+}
+
+/* ----------- BUTTON KEREN -------- */
+a {
+    text-decoration: none;
+    color: #ca8058;
+}
+
+  button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #d11d1d;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.2s;
+  }
+  
+  button:hover span {
+    padding-right: 15px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+  button:hover {
+    color: #d3d5e2;
+    background-color: #0549ae;
+    box-shadow: 4px 5px 17px -4px #2d3243;
+  }
+
+/* =============== Button Cari Ayat =========   */
+
+
+
+.cariayat {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #d11d1d;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  color: #d3d5e2;
+  background-color: #0549ae;
+  box-shadow: 4px 5px 17px -4px #2d3243;
+}
+  

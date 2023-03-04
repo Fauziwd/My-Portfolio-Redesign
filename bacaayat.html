@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="bacaayat.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Phudu:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat+Alternates:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="bacaayat.js"></script>
+  <title>Baca ayat Yukk!!</title>
+</head>
+
+
+<body>
+  <!-- <div class="container">
+    <h1>Daftar Surat Al-Quran</h1>
+    <p>Website ini berisi informasi dan fitur-fitur menarik yang dapat Anda nikmati.</p>
+    <button id="mulai-btn">Mulai</button>
+    
+    <div class="content" style="display: none;">
+      <div class="surat-list">
+        <ul class="surat" id="surat-list"></ul>
+      </div>
+      <div class="deskripsi-surat">
+        <h2>Pilih surat untuk menampilkan informasi</h2>
+      </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <h1>Daftar Surat Al-Quran</h1>
+    <h4>“Barang siapa yang membaca Al-Qur’an dan mengamalkannya 
+      semata-mata karena Allah SWT maka Allah akan memberikan 
+      mahkota dikepala kedua orangtuanya dan kenikmatan pada 
+      hari kiamat dan akan terlihat lebih terang daripada 
+      sinar matahari sehingga kamu tidak akan menduganya 
+      bahwa ganjaran itu dikarenakan amalan-amalan si pembaca
+       Al-Qur’an itu.” (HR. Abu daud)</h4>
+    <button id="mulai-btn">Mulai</button><br>
+  
+
+
+    <div class="content" style="display: none;">
+
+      <div class="table-container" style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th class="no-surat">No.</th>
+              <th class="nama-surat">Nama Surat</th>
+              <th class="nama-surat">Arti</th>
+              <th class="nama-surat">ayat</th>
+            </tr>
+          </thead>
+          <tbody id="surat-list">
+            <!-- data surat akan diisi melalui JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div class="table-container">
+        <div class="deskripsi-surat">
+          <h2 id="nama-surat"></h2>
+          <table>
+            <thead>
+              <th>Klik Daftar Surat, Maka Ayat akan ditampilkan disini..</th>
+              <!-- <tr>
+                <th>No.</th>
+                <th>Ayat</th>
+                <th>Terjemahan</th>
+              </tr> -->
+            </thead>
+            <tbody id="ayat-list">
+              <!-- data ayat akan diisi melalui JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  
+</body>
+</html>
