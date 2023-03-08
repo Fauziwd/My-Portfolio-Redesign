@@ -27,17 +27,17 @@
         <button class="button c">C</button>
         <button class="button">x</button>
         <button class="button">÷</button>
-        <button class="button one">1</button>
-        <button class="button two">2</button>
-        <button class="button three">3</button>
+        <button id="seven" class="button seven">7</button>
+        <button class="button eight">8</button>
+        <button class="button nine">9</button>
         <button class="button">+</button>
         <button class="button four">4</button>
         <button class="button five">5</button>
         <button class="button six">6</button>
         <button class="button">-</button>
-        <button class="button nine">9</button>
-        <button class="button eight">8</button>
-        <button id="seven" class="button seven">7</button>
+        <button class="button one">1</button>
+        <button class="button two">2</button>
+        <button class="button three">3</button>
         <button class="button zero">0</button>
         <button class="button zerozero">00</button>
         <button class="button">.</button>
@@ -212,14 +212,14 @@ function removeLastCharacter() {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Iya",
+      confirmButtonText: "Yakin",
       cancelButtonText: "Tidak",
     }).then((result) => {
       // If user confirms, show success pop-up and add 7 to screen
       if (result.isConfirmed) {
         Swal.fire({
           title: "Selamat!",
-          text: "Angka 7 berhasil ditambahkan.",
+          text: "angka keramat berhasil ditambahkan.",
           icon: "success",
           confirmButtonColor: "#3085d6",
           confirmButtonText: "Tambahkan",
