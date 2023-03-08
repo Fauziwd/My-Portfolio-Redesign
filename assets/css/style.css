@@ -113,6 +113,11 @@ h6 {
   }
 }
 
+.hide {
+  display: none;
+}
+
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices

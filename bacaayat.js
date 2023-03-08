@@ -135,3 +135,4 @@ $(document).on("click", ".ayat-link", function(e) {
   });
 });
 
+

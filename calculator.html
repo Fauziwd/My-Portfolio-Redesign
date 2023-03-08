@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator iOS</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+</head>
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p>Apakah Anda yakin ingin menambahkan angka 7?</p>
+        <div class="modal-buttons">
+          <button id="yesButton">Iya</button>
+          <button id="noButton">Tidak</button>
+        </div>
+      </div>
+    </div>
+      
+    <div class="container">
+      <div class="calculator">
+        <div class="screen">0</div>
+        <button class="button ac">AC</button>
+        <button class="button c">C</button>
+        <button class="button">x</button>
+        <button class="button">÷</button>
+        <button class="button one">1</button>
+        <button class="button two">2</button>
+        <button class="button three">3</button>
+        <button class="button">+</button>
+        <button class="button four">4</button>
+        <button class="button five">5</button>
+        <button class="button six">6</button>
+        <button class="button">-</button>
+        <button class="button nine">9</button>
+        <button class="button eight">8</button>
+        <button id="seven" class="button seven">7</button>
+        <button class="button zero">0</button>
+        <button class="button zerozero">00</button>
+        <button class="button">.</button>
+        <button class="button equals">=</button>
+      </div><a href="https://portfauziiwd.vercel.app/">
+      <img src="assets/img/portfauziiwd.vercel.app.png" alt="watermark" style="position: absolute; bottom: 20px; right: 20px; width: 150px;"></a>
+    </div>
+           
+            <script>
+    // Ambil elemen-elemen HTML
+const screen = document.querySelector('.screen');
+const buttons = document.querySelectorAll('.button');
+
+// Inisialisasi nilai awal
+let prevValue = '';
+let currentValue = '0';
+let operator = null;
+
+// Fungsi untuk menampilkan angka pada layar
+function updateScreen(value) {
+
+  // Batasi nilai ke panjang maksimum tertentu, misalnya 10 karakter
+  if (value.length > 15) {
+    value = value.slice(0, 15);
+  }
+  screen.innerText = value;
+}
+
+
+// Fungsi untuk menambah angka ke layar
+function appendNumber(number) {
+  if (currentValue === '0') {
+    currentValue = '';
+  }
+  currentValue += number;
+  updateScreen(currentValue);
+}
+
+// Fungsi untuk menambahkan titik desimal ke layar
+function appendDecimal() {
+  if (currentValue.includes('.')) {
+    return;
+  }
+  currentValue += '.';
+  updateScreen(currentValue);
+}
+
+// Fungsi untuk memilih operator
+function chooseOperator(operatorValue) {
+  if (operator === null) {
+    prevValue = currentValue;
+  } else {
+    performCalculation();
+  }
+  operator = operatorValue;
+  currentValue = '0';
+}
+
+// Fungsi untuk melakukan perhitungan
+function performCalculation() {
+  let calculation;
+  const prev = parseFloat(prevValue);
+  const current = parseFloat(currentValue);
+  if (isNaN(prev) || isNaN(current)) {
+    return;
+  }
+  switch (operator) {
+    case '+':
+      calculation = prev + current;
+      break;
+    case '-':
+      calculation = prev - current;
+      break;
+    case 'x':
+      calculation = prev * current;
+      break;
+    case '÷':
+      calculation = prev / current;
+      break;
+    default:
+      return;
+  }
+  currentValue = calculation.toString();
+  operator = null;
+  updateScreen(currentValue);
+}
+
+// Fungsi untuk menghapus angka atau reset kalkulator
+function clearCalculator() {
+  prevValue = '';
+  currentValue = '0';
+  operator = null;
+  updateScreen(currentValue);
+}
+
+// Fungsi untuk menghapus satu angka saja
+function deleteNumber() {
+  if (currentValue.length === 1) {
+    currentValue = '0';
+  } else {
+    currentValue = currentValue.slice(0, -1);
+  }
+  updateScreen(currentValue);
+}
+
+// Tambahkan event listener ke tombol "C"
+const clearButton = document.querySelector('.ac');
+clearButton.addEventListener('click', function() {
+  if (this.innerText === 'AC') {
+    clearCalculator();
+  } else {
+    deleteNumber();
+  }
+});
+
+
+// Tambahkan event listener ke setiap tombol
+buttons.forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    const value = event.target.innerText;
+    switch (value) {
+      case "AC":
+        clearCalculator();
+        break;
+      case "C":
+        removeLastCharacter();
+        break;
+      case "%":
+        currentValue = (parseFloat(currentValue) / 100).toString();
+        updateScreen(currentValue);
+        break;
+      case "÷":
+      case "x":
+      case "+":
+      case "-":
+        chooseOperator(value);
+        break;
+      case "=":
+        performCalculation();
+        break;
+      case ".":
+        appendDecimal();
+        break;
+      default:
+        if (Number.isInteger(parseFloat(value))) {
+          appendNumber(value);
+        }
+        break;
+    }
+  });
+});
+
+function removeLastCharacter() {
+  if (currentValue.length > 1) {
+    currentValue = currentValue.slice(0, -1);
+  } else {
+    currentValue = "0";
+  }
+  updateScreen(currentValue);
+}
+
+// ====== Pop Up Tombol 7 ========
+
+
+ // Add event listener to button
+ const sevenButton = document.getElementById("seven");
+  sevenButton.addEventListener("click", () => {
+    // Show confirmation pop-up
+    Swal.fire({
+      title: "Apakah anda yakin ingin menambahkan angka 7?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Iya",
+      cancelButtonText: "Tidak",
+    }).then((result) => {
+      // If user confirms, show success pop-up and add 7 to screen
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Selamat!",
+          text: "Angka 7 berhasil ditambahkan.",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Tambahkan",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const screen = document.getElementById("screen");
+            Swal.fire({
+              title: "Siiuuuuuuu..",
+              text: "Liverpool 7-0 Man.United",
+              imageUrl: "assets/img/ipul7-0mu.webp",
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: "Liverpool 7-0 Man.United",
+              confirmButtonColor: "#3085d6",
+              confirmButtonText: "OK",
+            });
+          }
+        })
+      }
+    });
+  });
+
+
+
+
+</script>
+</body>
+</html>
+            
+            
+            
