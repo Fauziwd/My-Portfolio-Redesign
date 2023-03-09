@@ -8,6 +8,82 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-btn {
+  cursor: pointer;
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.495);
+  border-radius: 7px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.dropdown .dropdown-menu a {
+  display: block;
+  padding: 15px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.dropdown-menu a i {
+  margin-right: 17px;
+}
+
+/* Ganti warna scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Lebar scrollbar */
+  background-color: #f5f5f5; /* Warna latar belakang scrollbar */
+}
+
+/* Ganti warna track */
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Warna latar belakang track scrollbar */
+}
+
+/* Ganti warna thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #3853a5; /* Warna thumb scrollbar */
+  border-radius: 5px; /* Rounding sudut thumb */
+}
+
+/* Ganti warna thumb ketika di-hover */
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px;
+  background-color: #999; /* Warna thumb scrollbar ketika di-hover */
+}
+
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
