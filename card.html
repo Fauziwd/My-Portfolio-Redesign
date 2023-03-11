@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aplikasi Pembuat Kartu Ucapan</title>
+    <link rel="stylesheet" href="assets/css/card.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+  </head>
+  
+  <body>
+    <h1>Aplikasi Pembuat Kartu Ucapan</h1>
+    <!-- Form untuk menginputkan teks dan memilih/gambar -->
+    <form>
+      <label for="text">Teks:</label>
+      <input type="text" id="text" name="text" placeholder="Masukkan teks disini..." required>
+
+      <label for="image">Gambar:</label>
+      <select id="image" name="image" required>
+        <option value="">Pilih gambar...</option>
+        <option value="gambar1.jpg">Gambar 1</option>
+        <option value="gambar2.jpg">Gambar 2</option>
+        <option value="gambar3.jpg">Gambar 3</option>
+        <option value="upload">Upload gambar</option>
+      </select>
+
+      <input type="file" id="upload" name="upload" style="display:none;">
+
+      <button type="submit">Buat Kartu Ucapan</button>
+    </form>
+
+    <!-- Tampilan kartu ucapan -->
+    <div class="card" id="card" style="display: none;">
+      <img id="card-image" src="">
+      <h2 id="card-text"></h2>
+      <p>Terima kasih sudah menggunakan aplikasi kami.</p>
+      <div class="share-buttons">
+        <button id="share-btn">Button
+            <div class="star-1">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+            </div>
+            <div class="star-2">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+            </div>
+            <div class="star-3">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+            </div>
+            <div class="star-4">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+            </div>
+            <div class="star-5">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+            </div>
+            <div class="star-6">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+            </div>
+          </button>
+      </div>
+    </div>
+
+    <script>
+        // Initialize required elements
+        const form = document.querySelector('form');
+        const card = document.getElementById('card');
+        const cardImage = document.getElementById('card-image');
+        const cardText = document.getElementById('card-text');
+        const imageSelect = document.getElementById('image');
+        const uploadInput = document.getElementById('upload');
+        const shareBtn = document.getElementById('share-btn');
+        const shareButtons = document.querySelectorAll('.share-btn');
+      
+        // Show/hide upload input based on the value of the image select
+        imageSelect.addEventListener('change', () => {
+          if (imageSelect.value === 'upload') {
+            uploadInput.style.display = 'block';
+          } else {
+            uploadInput.style.display = 'none';
+          }
+        });
+      
+        // Listen for form submit, prevent default behavior, and update the card with user inputs
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const text = document.getElementById('text').value;
+          const image = imageSelect.value === 'upload' ? URL.createObjectURL(uploadInput.files[0]) : imageSelect.value;
+          cardText.innerText = text;
+          cardImage.src = image;
+          card.style.display = 'block';
+        });
+      
+        // Generate PDF and open social links upon clicking on share button
+        $(function() {
+          function createPDF() {
+            // Use html2pdf to generate PDF from the card element
+            const element = document.getElementById('card');
+            const options = {
+              margin:       1,
+              filename:     'kartu-ucapan.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2 },
+              jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+          }
+      
+          shareBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            createPDF();
+      
+            // Set URL and title of the shared link
+            const url = 'https://contoh.com/kartu-ucapan.pdf';
+            const title = 'Kartu Ucapan';
+      
+            // Open links to social media platforms
+            const apps = ['whatsapp', 'facebook', 'twitter'];
+            apps.forEach((app) => {
+              shareLink(`#${app}`, `https://${app}.com/share?url=${url}&title=${title}`);
+            });
+          });
+      
+          // Add event listeners to share buttons
+          function shareLink(element, link) {
+            const shareElement = document.querySelector(element);
+            shareElement.addEventListener('click', (event) => {
+              event.preventDefault();
+      
+              // Share on WhatsApp
+              if (link.includes('wa.me') || link.includes('api.whatsapp.com')) {
+                window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(card.outerHTML)}`);
+              }
+              // Share on other social media platforms
+              else {
+                window.open(link);
+              }
+            });
+          }
+      
+          shareButtons.forEach(button => {
+            shareLink(button, button.dataset.link);
+          });
+        });
+      </script>
+      
+      
+  </body>
+</html>
