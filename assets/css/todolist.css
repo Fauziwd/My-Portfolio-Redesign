@@ -1,0 +1,147 @@
+
+::selection {
+    background-color: rgba(132, 132, 191, 0.596);
+    color: rgb(17, 12, 12);
+  }
+  
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 3em;
+    padding: 0;
+
+        --s: 150px; /* control the size */
+        
+        background:
+          linear-gradient(135deg,#0000 18.75%,#5E412F 0 31.25%,#0000 0),
+          repeating-linear-gradient(45deg,#5E412F -6.25% 6.25%,#FCEBB6 0 18.75%);
+        background-size: var(--s) var(--s); 
+      }
+
+
+h1 {
+    text-align: center;
+    margin-top: 75px;
+    font-family: 'Rubik Iso', cursive;
+}
+
+h5 {
+    text-align: center;
+    margin: auto;
+    font-family: 'Kalam', cursive;
+}
+
+#toDoForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+#toDoInput {
+    padding: 10px;
+    border: none;
+    width: 250px;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(255, 255, 255, 0.112); /* warna latar belakang dengan opasitas 80% */
+    backdrop-filter: blur(6px); /* efek blur dengan jarak 10 piksel */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(20, 123, 167) 0%, rgb(102, 177, 247) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #144fa798;
+    letter-spacing: 0.05em;
+    border-radius: 5px;
+  }
+
+  input#noteInput {
+    padding: 10px;
+    border: none;
+    width: 200px;
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(255, 255, 255, 0.112); /* warna latar belakang dengan opasitas 80% */
+    backdrop-filter: blur(6px); /* efek blur dengan jarak 10 piksel */
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cssbuttons-io-button svg {
+    margin-right: 6px;
+  }
+  
+  .cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #1471a798;
+  }
+  
+  .cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #1471a798;
+  }
+
+#toDoTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#toDoTable th,
+{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #b9b0b0;
+    background-color: #b9b0b0;
+}
+
+#toDoTable th {
+    background-color: #008CBA;
+    color: white;
+    padding: 1.3em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.toDoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+td.toDoItem {
+    text-align: center;
+}
+
+.toDoItem span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.deleteButton {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+tr {
+    text-align: center;
+    margin: auto;
+    color: rgb(12 50 102);
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(69 84 131 / 21%);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

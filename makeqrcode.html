@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Aplikasi Pembuat Kode QR</title>
+	<link rel="stylesheet" href="assets/css/makeqrcode.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Aplikasi Pembuat Kode QR</h1>
+	</header>
+	<main>
+		<div class="container">
+			<form>
+				<div class="form-group">
+					<label for="text-input">Masukkan Teks atau Tautan:</label>
+					<input type="text" id="text-input" name="text-input" required>
+				</div>
+				<button type="submit" id="generate-button">Generate Kode QR</button>
+			</form>
+			<div class="qrcode-container">
+				<div id="qrcode"></div>
+				<button id="download-button" disabled>Download</button>
+			</div>
+		</div>
+	</main>
+    <script src="assets/js/makeqrcode.js"></script>
+</body>
+</html>
