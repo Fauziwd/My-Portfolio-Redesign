@@ -139,7 +139,7 @@ td.toDoItem {
 tr {
     text-align: center;
     margin: auto;
-    color: rgb(12 50 102);
+    color: rgb(13, 32, 59);
     font-family: 'Montserrat', sans-serif;
     background: rgb(69 84 131 / 21%);
     backdrop-filter: blur(6px);
