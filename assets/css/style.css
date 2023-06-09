@@ -1722,3 +1722,75 @@ section#about.about {
 }
 
 /* ========== END ANIMASI WEB ============ */
+
+#skills {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+}
+
+.section-title {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.count-box {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.count-box:hover {
+  transform: translateY(-5px);
+}
+
+.count-box i {
+  font-size: 48px;
+  color: #4c87af;
+}
+
+.count-box p {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #777777;
+}
+
+.container[data-aos="fade-up"] {
+  position: relative;
+}
+
+.row[data-aos="fade-up"] {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-lg-2,
+.col-md-3 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .col-lg-2 {
+    max-width: 16.6667%;
+    flex: 0 0 16.6667%;
+  }
+
+  .col-md-3 {
+    max-width: 25%;
+    flex: 0 0 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-text {
+    text-align: left;
+  }
+}

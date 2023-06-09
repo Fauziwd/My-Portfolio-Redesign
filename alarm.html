@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>JS + CSS Clock</title>
+    <meta charset="UTF-8">
+    <title>Retro Alarm</title>
     <link rel="stylesheet" href="assets/css/alarm.css">
 </head>
 <body>
-
-
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
+    <div class="container">
+        <h1>Retro Alarm</h1>
+        <div class="clock">
+            <div class="hour-hand"></div>
+            <div class="minute-hand"></div>
+            <div class="second-hand"></div>
+            <div class="center-dot"></div>
+        </div>
+        <div class="alarm-form">
+            <h2>Set Alarm</h2>
+            <form id="alarm-form">
+                <label for="hour">Hour:</label>
+                <input type="number" id="hour" min="0" max="23">
+                <label for="minute">Minute:</label>
+                <input type="number" id="minute" min="0" max="59">
+                <button type="submit" id="set-alarm">Set Alarm</button>
+            </form>
+        </div>
     </div>
-
-<script src="assets/js/alarm.js"></script>
+    <audio id="alarm-sound" src=""></audio>
+    <script src="assets/js/alarm.js"></script>
 </body>
 </html>
